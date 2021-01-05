@@ -6,7 +6,7 @@ public class PigLatin {
       while (obj.hasNextLine() ){
         Scanner liner = new Scanner(obj.nextLine() );
         while (liner.hasNext()){
-          System.out.println(pigLatin(liner.next()+" "));
+          System.out.print(pigLatinBest(liner.next())+" ");
         }
       }
     }
@@ -40,7 +40,15 @@ public class PigLatin {
   }
 
     public static String pigLatinBest(String s){
-      return " ";
+      s = s.toLowerCase();
+      char lastChar = s.charAt(s.length()-1) ;
+      //if first character ain't a letter
+      if (!Character.isLetter(s.charAt(0)) ) return s;
+      //accounts for punctuation
+      else if (!Character.isLetterOrDigit(lastChar) ){
+        return pigLatin(s) + lastChar;
+      }
+      else return pigLatin(s);
 
     }
 
