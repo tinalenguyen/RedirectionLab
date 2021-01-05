@@ -1,7 +1,14 @@
+import java.util.*;
 public class PigLatin {
 
     public static void main(String[] main){
-
+      Scanner obj = new Scanner(System.in);
+      while (obj.hasNextLine() ){
+        Scanner liner = new Scanner(obj.nextLine() );
+        while (liner.hasNext()){
+          System.out.println(pigLatin(liner.next()+" "));
+        }
+      }
     }
 
     public static String pigLatinSimple(String s){
@@ -33,7 +40,7 @@ public class PigLatin {
   }
 
     public static String pigLatinBest(String s){
-
+      return " ";
 
     }
 
